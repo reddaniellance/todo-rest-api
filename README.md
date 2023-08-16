@@ -6,14 +6,13 @@ This is just a REST API - NO INTERFACE is included
 
 - [Installation](#installation)
 - [API Documentation](#documentation)
-- [License](#license)
 - [Acknowledgments](#acknowledgments)
 
 ## Installation
 
 1. Clone the repository:
 
-    - git clone 
+    - git clone https://github.com/reddaniellance/todo-rest-api.git
 
 2. Install dependencies:
 
@@ -49,10 +48,6 @@ This is just a REST API - NO INTERFACE is included
 
       - DELETE http://localhost:3000/todo-items/{id}
 
-
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Acknowledgments
 
