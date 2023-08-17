@@ -30,8 +30,10 @@ async function create(todo){
 async function update(id, todo){
     const rows = await db.query(`CALL update_todo('` + todo.title + `', '` + todo.description + `', '` + todo.status + `', ` + id +`)`);
     const data = helper.emptyOrRows(rows);
-    return getAll();
+    // return getAll();
+    return data;
 }
+
 
 async function remove(id){
     const rows = await db.query('CALL remove_todo(' + id + ')');

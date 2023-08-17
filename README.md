@@ -33,7 +33,7 @@ This is just a REST API - NO INTERFACE is included
       - POST http://localhost:3000/todo-items
    - title (string)
    - description (string)
-   - status (int) 0 = pending | 1 = ongoing | 2 = completed | 3 = cancelled 
+   - status (int) 0 = pending | 1 = ongoing | 2 = completed | 3 = canceled 
 
 
 <b> Update a TODO </b>
@@ -41,7 +41,7 @@ This is just a REST API - NO INTERFACE is included
       - PUT http://localhost:3000/todo-items/{id}
    - title (string)
    - description (string)
-   - status (int) 0 = pending | 1 = ongoing | 2 = completed | 3 = cancelled
+   - status (int) 0 = pending | 1 = ongoing | 2 = completed | 3 = canceled
 
 
 <b> Delete a TODO </b>
