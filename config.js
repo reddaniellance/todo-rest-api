@@ -1,4 +1,5 @@
 const config = {
+    port: 3000,
     db: {
         host: "sql6.freemysqlhosting.net",
         user: "sql6640145",

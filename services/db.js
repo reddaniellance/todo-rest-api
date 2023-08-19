@@ -7,6 +7,4 @@ async function query(stringQuery) {
     return results;
 }
 
-module.exports = {
-    query,
-}
+module.exports = {query};

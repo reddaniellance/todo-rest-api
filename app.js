@@ -1,7 +1,8 @@
 const express = require("express");
+const config = require('./config');
 const app = express();
-const port = 3000;
 const todoRouter = require("./routes/todo");
+
 app.use(express.json());
 app.use(
     express.urlencoded({
@@ -9,13 +10,10 @@ app.use(
     })
 );
 app.get("/", (req, res) => {
-    res.json({ message: "ok" });
+    res.send('Todo REST API');
 });
 
-//ROUTES
 app.use("/todo-items", todoRouter);
-
-//ERROR HANDLER
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
     console.error(err.message, err.stack);
@@ -23,6 +21,6 @@ app.use((err, req, res, next) => {
     return;
 });
 
-app.listen(port, () => {
-    console.log(`Application now running on http://localhost:${port}`);
+app.listen(config.port, () => {
+    console.log(`Application now running on http://localhost:${config.port}`);
 });

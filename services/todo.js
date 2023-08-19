@@ -14,7 +14,7 @@ async function getAll(page = 1){
 }
 
 async function getById(id){
-    const rows = await db.query('CALL get_by_id(' + id + ')');
+    const rows = await db.query(`CALL get_by_id( ${id} )`);
     const data = helper.emptyOrRows(rows);
     return {
         data
@@ -22,13 +22,13 @@ async function getById(id){
 }
 
 async function create(todo){
-    const rows = await db.query(`CALL add_todo('` + todo.title + `', '` + todo.description + `', '` + todo.status + `')`);
+    const rows = await db.query(`CALL add_todo('${todo.title}', '${todo.description}', '${todo.status}')`);
     const data = helper.emptyOrRows(rows);
     return getAll();
 }
 
 async function update(id, todo){
-    const rows = await db.query(`CALL update_todo('` + todo.title + `', '` + todo.description + `', '` + todo.status + `', ` + id +`)`);
+    const rows = await db.query(`CALL update_todo('${todo.title}', '${todo.description}', '${todo.status}', ${todo.id})`);
     const data = helper.emptyOrRows(rows);
     // return getAll();
     return data;
@@ -36,7 +36,7 @@ async function update(id, todo){
 
 
 async function remove(id){
-    const rows = await db.query('CALL remove_todo(' + id + ')');
+    const rows = await db.query(`CALL remove_todo(${id})`);
     const data = helper.emptyOrRows(rows);
     return getAll();
 }
